@@ -1,7 +1,7 @@
 import React from 'react';
 import "./Cell.css";
 
-const Cell = ({color}) => {
+const Cell = ({color, onClick}) => {
 
     if (color >= 30) {
         color = "#254E77";
@@ -15,7 +15,7 @@ const Cell = ({color}) => {
         color = "#EDEDED"
     }
 
-    return <div className="cell" style={{ backgroundColor: color }} />;
+    return <div className="cell" style={{ backgroundColor: color }} onClick={onClick} />;
 };
 
 export default Cell;
