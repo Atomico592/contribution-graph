@@ -1,10 +1,12 @@
 import React from 'react';
 import "./Text.css"
 
-const Text = ({content}) => {
+const Text = ({content, style}) => {
     return (
-        <div className="text-style">
-            {content}
+        <div className="text-style" style={style}>
+            <p>
+                {content}
+            </p>
         </div>
     );
 };

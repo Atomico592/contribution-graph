@@ -8,7 +8,8 @@ import Text from "../../components/UI/Text/Text";
 const MainBlock = () => {
     const dispatch = useDispatch();
     const date = useSelector(store => store.date.date);
-    const week = ["Пн", "Ср", "Пн"];
+    const week = ["Пн", "Ср", "Пт"];
+    const  month = ["Апр.", "Май", "Июнь", "Июль", "Авг.", "Сент.", "Окт.", "Нояб.", "Дек.", "Янв.", "Февр.", "Март"]
 
     useEffect(() => {
         dispatch(fetchDateRequest())
@@ -46,11 +47,21 @@ const MainBlock = () => {
                         ))}
                     </div>
                 </div>
-                        <div className="week">
+                        <div className="week" >
                             {week.map((item, index) => (
                                 <Text
                                     key={index}
                                     content={item}
+                                    style= {{paddingBottom: "5px"}}
+                                />
+                            ))}
+                        </div>
+                        <div className="month">
+                            {month.map((item, index) => (
+                                <Text
+                                    key={index}
+                                    content={item}
+                                    style={{paddingRight: "50px", display: "inline-block"}}
                                 />
                             ))}
                         </div>

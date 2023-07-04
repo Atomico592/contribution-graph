@@ -1,7 +1,3 @@
-main-block-wrapper {
-
-}
-
 .main-block {
     background-color: #FFFFFF;
     width: 969px;
@@ -14,8 +10,15 @@ main-block-wrapper {
 .main-block-inner {
     display: flex;
     flex-wrap: wrap;
+    position: relative;
 }
 .week {
     position: absolute;
-    padding-bottom: 25px;
+    top: 276px;
+    left: 186px;
+}
+.month {
+    position: absolute;
+    top: 229px;
+    left: 239px;
 }
