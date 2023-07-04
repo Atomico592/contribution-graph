@@ -6,9 +6,10 @@
     padding: 0;
 }
 .cell:hover {
-    border: 1px solid #00000080;
+
+    outline: 1px solid #00000080;
 }
 
 .cell:active {
-    border: 1px solid #000000E5;
+    outline: 1px solid #000000E5;
 }
