@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useEffect} from 'react';
+import {useDispatch, useSelector} from "react-redux";
+import {fetchDateRequest} from "./store/actions/dateActions";
+import store from "./store/configureStore";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    const dispatch = useDispatch()
+    const date = useSelector(store => store.date.date)
+    useEffect(() => {
+        dispatch(fetchDateRequest())
+    },[dispatch])
+    console.log(date)
+    return (
+        <div>
+          test
+        </div>
+    );
+};
 
 export default App;
