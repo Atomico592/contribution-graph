@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from 'react';
-import "./MainBlock.css";
+import moment from "moment";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchDateRequest} from "../../store/actions/dateActions";
 import Cell from "../../components/UI/Cell/Cell";
 import Text from "../../components/UI/Text/Text";
 import Info from "../../components/UI/Info/Info";
-import moment from "moment";
 import Exampl from "../../components/Example/Exampl";
+import "./MainBlock.css";
 
 const MainBlock = () => {
     const dispatch = useDispatch();

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import Cell from "../UI/Cell/Cell";
-import "./Examlp.css"
 import Info from "../UI/Info/Info";
+import "./Examlp.css"
 
 const Exampl = () => {
     const [state, setState] = useState(null);
