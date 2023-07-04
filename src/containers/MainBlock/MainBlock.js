@@ -5,6 +5,8 @@ import {fetchDateRequest} from "../../store/actions/dateActions";
 import Cell from "../../components/UI/Cell/Cell";
 import Text from "../../components/UI/Text/Text";
 import Info from "../../components/UI/Info/Info";
+import moment from "moment";
+import Exampl from "../../components/Example/Exampl";
 
 const MainBlock = () => {
     const dispatch = useDispatch();
@@ -18,7 +20,14 @@ const MainBlock = () => {
         dispatch(fetchDateRequest())
     }, [dispatch])
 
-        const renderGraph = () => {
+
+    const formatDate = (dateString) => {
+        const formattedDate = moment(dateString).format('dddd, MMMM D, YYYY');
+        return formattedDate;
+    };
+
+
+    const renderGraph = () => {
             if (!date) {
                 return <div>Loading...</div>;
             }
@@ -36,7 +45,7 @@ const MainBlock = () => {
                 if (!calendar[weekDay]) {
                     calendar[weekDay] = [];
                 }
-                calendar[weekDay].push(<Cell key={dateKey} color={color} onClick={(e) => onClick(dateKey.toString(), color, e)}/>);
+                calendar[weekDay].push(<Cell key={dateKey} color={color} onClick={(e) => onClick(formatDate(dateKey), color, e)}/>);
                 currentDate.setDate(currentDate.getDate() + 1);
             }
 
@@ -47,15 +56,13 @@ const MainBlock = () => {
                 }
             }
 
-            // const onClose = () => {
-            //     setOpenInfoModal(false)
-            // }
             if (openInfoModal) {
                setTimeout(() => {
                     setOpenInfoModal(false);
                 }, 5000);
 
             }
+
 
             return (
                 <div className="main-block-wrapper" >
@@ -92,6 +99,12 @@ const MainBlock = () => {
                         content={sellInfo?.date}
                         position={{left: `${sellInfo?.positionX}px`, top: `${sellInfo?.positionY}px`}}
                     />) : null}
+
+                    <div className="exampl-block">
+                        <Exampl/>
+                    </div>
+
+
                 </div>
             );
         };
