@@ -1,18 +1,12 @@
-import React, {useEffect} from 'react';
-import {useDispatch, useSelector} from "react-redux";
-import {fetchDateRequest} from "./store/actions/dateActions";
-import store from "./store/configureStore";
+import React  from 'react';
+import MainBlock from "./containers/MainBlock/MainBlock";
+
 
 const App = () => {
-    const dispatch = useDispatch()
-    const date = useSelector(store => store.date.date)
-    useEffect(() => {
-        dispatch(fetchDateRequest())
-    },[dispatch])
-    console.log(date)
+
     return (
         <div>
-          test
+            <MainBlock/>
         </div>
     );
 };

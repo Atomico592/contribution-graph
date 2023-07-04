@@ -1,0 +1,21 @@
+main-block-wrapper {
+
+}
+
+.main-block {
+    background-color: #FFFFFF;
+    width: 969px;
+    padding: 113px;
+    position: absolute;
+    top: 150px;
+    left: 100px;
+}
+
+.main-block-inner {
+    display: flex;
+    flex-wrap: wrap;
+}
+.week {
+    position: absolute;
+    padding-bottom: 25px;
+}
